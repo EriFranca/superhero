@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+   
+<div class="container">
+    <!-- A navigation bar -->
+    <div id="top-bar" style="color: #02a86b;">
+        <div><a href="#powerstats">Powerstats</a></div>
+        <div><a href="#appearance-target">Appearance</a></div>
+        <div><a href="#biography-target">Biography</a></div>
+        <div><a href="#occupation-target">Occupation</a></div>
+        <div><a href="#connections-target">Connections</a></div>
+    </div>
+
+    <!-- Hero data will be appended here -->
+    <div id='data-container'>
+        <!-- Image of the hero -->
+        <div id="image">
+            <img width="400" height="400" src="{{hero.images.sm}}">
+        </div>
+
+        <div id="detail-container">
+            <div class="detail-item">
+                <!-- Powerstats bars -->
+                <span class="anchor" id="powerstats"></span>
+                <h4 id="powerstats">{{ hero.name }}'s' Powerstats</h4>
+                <div id="stats-container">
+                    <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>Metrics</th>
+                            <th>Measure</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Intelligence</td>
+                            <td>{{hero.powerstats.intelligence}}</td>
+                          </tr>
+                          <tr>
+                            <td>Strength</td>
+                            <td>{{hero.powerstats.strength}}</td>
+                          </tr>
+                          <tr>
+                            <td>Speed</td>
+                            <td>{{hero.powerstats.speed}}</td>
+                          </tr>
+                          <tr>
+                            <td>Durability</td>
+                            <td>{{hero.powerstats.durability}}</td>
+                          </tr>
+                          <tr>
+                            <td>Power</td>
+                            <td>{{hero.powerstats.combat}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+
+            <div class="detail-item">
+                <span class="anchor" id="appearance-target"></span>
+                <h1>Appearance</h1>
+                <section id="appearance">
+                    <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>Metrics</th>
+                            <th>Measure</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Gender</td>
+                            <td>{{hero.appearance.gender }}</td>
+                          </tr>
+                          <tr>
+                            <td>Race</td>
+                            <td>{{hero.appearance.race}}</td>
+                          </tr>
+                          <tr>
+                            <td>Height</td>
+                            <td>{{hero.appearance.height}}</td>
+                          </tr>
+                          <tr>
+                            <td>Weight</td>
+                            <td>{{hero.appearance.weight}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </section>
+            </div>
+            <div class="detail-item">
+                <span class="anchor" id="biography-target"></span>
+                <h1>Biography</h1>
+                <section id="biography">
+                    <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>Metrics</th>
+                            <th>Measure</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Full Name</td>
+                            <td>{{hero.biography.fullName }}</td>
+                          </tr>
+                          <tr>
+                            <td>Alter Egos</td>
+                            <td>{{hero.biography.alterEgos}}</td>
+                          </tr>
+                          <tr>
+                            <td>Aliases</td>
+                            <td>{{hero.biography.aliases}}</td>
+                          </tr>
+                          <tr>
+                            <td>Place of Birth</td>
+                            <td>{{hero.biography.placeOfBirth }}</td>
+                          </tr>
+                          <tr>
+                            <td>First Appearance</td>
+                            <td>{{hero.biography.firstAppearance }}</td>
+                          </tr>
+                          <tr>
+                            <td>Publisher</td>
+                            <td>{{hero.biography.publisher }}</td>
+                          </tr>
+                          <tr>
+                            <td>Alignment</td>
+                            <td>{{hero.biography.alignment }}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </section>
+            </div>
+            <div class="detail-item">
+                <span class="anchor" id="occupation-target"></span>
+                <h1>Occupation</h1>
+                <section id="occupation">
+                    <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>Metrics</th>
+                            <th>Measure</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Occupation</td>
+                            <td>{{hero.work.occupation}}</td>
+                          </tr>
+                          <tr>
+                            <td>Base</td>
+                            <td>{{hero.work.base}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </section>
+            </div>
+            <div class="detail-item">
+                <span class="anchor" id="connections-target"></span>
+                <h1>Connections</h1>
+                <section id="connections">
+                    <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>Metrics</th>
+                            <th>Measure</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Group Affiliation</td>
+                            <td>{{hero.connections.groupAffiliation}}</td>
+                          </tr>
+                          <tr>
+                            <td>Relatives</td>
+                            <td>{{hero.connections.relatives }}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
